@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wiki SPHEREx · Bortle Cero</title>
+  <meta name="description" content="Wiki de consulta del equipo Bortle Cero sobre SPHEREx y el reto Planet X and SPHEREx (NASA Space Apps 2026).">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080c14'/%3E%3Cpath d='M16 5l2.6 8.4L27 16l-8.4 2.6L16 27l-2.6-8.4L5 16l8.4-2.6z' fill='%23b8d4f0'/%3E%3C/svg%3E">
+
+  <!-- Docsify 5.1.0 (MIT) y Space Grotesk (SIL OFL 1.1, vía Fontsource). Versiones fijas. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/themes/core.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/themes/addons/core-dark.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/space-grotesk@5.3.0/index.css">
+
+  <style>
+    /* Colores y tipografía del DESIGN.md del proyecto (adaptación de Noir Cósmico v2). Sólo tema oscuro. */
+    :root {
+      --bc-abismo: #04070b;
+      --bc-cosmos: #080c14;
+      --bc-noche: #0d1625;
+      --bc-horizonte: #1a2840;
+      --bc-blanco: #f0f6ff;
+      --bc-texto: #c8d8ec;
+      --bc-estrella: #b8d4f0;
+      --bc-muted: #96a6ba;
+      --bc-acento: #7ba8d4;
+      --bc-border: #2a4060;
+      --bc-border-soft: #1a2840;
+      --bc-aviso: #d4a870;
+
+      --font-family: "Space Grotesk Variable", system-ui, sans-serif;
+      --font-family-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      --font-size: 17px;
+      --line-height: 1.7;
+
+      --color-bg: var(--bc-cosmos);
+      --color-text: var(--bc-texto);
+      --theme-color: var(--bc-acento);
+      --heading-color: var(--bc-blanco);
+      --strong-color: var(--bc-blanco);
+      --link-color: var(--bc-acento);
+      --link-color-hover: var(--bc-estrella);
+      --border-color: var(--bc-border);
+
+      --sidebar-bg: var(--bc-noche);
+      --sidebar-border-color: var(--bc-border-soft);
+      --sidebar-color: var(--bc-texto);
+      --sidebar-link-color: var(--bc-texto);
+      --sidebar-link-color-active: var(--bc-estrella);
+      --sidebar-name-color: var(--bc-blanco);
+      --sidebar-name-font-family: var(--font-family);
+      --sidebar-group-title-color: var(--bc-acento);
+
+      --code-bg: var(--bc-noche);
+      --code-color: var(--bc-estrella);
+      --codeblock-bg: var(--bc-abismo);
+      --codeblock-color: var(--bc-texto);
+      --blockquote-bg: var(--bc-noche);
+      --blockquote-border-color: var(--bc-acento);
+      --blockquote-color: var(--bc-texto);
+      --table-row-alt-bg: var(--bc-noche);
+      --mark-bg: var(--bc-aviso);
+      --mark-color: var(--bc-abismo);
+
+      --form-element-bg: var(--bc-abismo);
+      --form-element-border-color: var(--bc-border);
+      --form-element-color: var(--bc-blanco);
+
+      color-scheme: dark;
+    }
+
+    body { background: var(--bc-cosmos); }
+
+    .markdown-section h1 { font-weight: 400; }
+    .markdown-section h2,
+    .markdown-section h3 { font-weight: 500; }
+
+    /* Tablas largas: se desplazan dentro de su caja, no la página. */
+    .markdown-section table { display: block; overflow-x: auto; }
+    .markdown-section th { color: var(--bc-blanco); }
+    .markdown-section td, .markdown-section th { border-color: var(--bc-border); }
+
+    /* Foco visible (DESIGN.md §1.4). */
+    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--bc-estrella);
+      outline-offset: 2px;
+    }
+
+    /* Pie de cada página. */
+    .bc-pie {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--bc-border-soft);
+      color: var(--bc-muted);
+      font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.5rem;
+      justify-content: space-between;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Cargando el wiki…</div>
+
+  <script>
+    var REPO = 'https://github.com/vse-elbuenmai/bortlecero-spherex-wiki';
+
+    window.$docsify = {
+      name: 'Wiki SPHEREx · Bortle Cero',
+      nameLink: '#/',
+      repo: REPO,
+      loadSidebar: true,
+      alias: { '/.*/_sidebar.md': '/_sidebar.md' },
+      relativePath: true,
+      auto2top: true,
+      maxLevel: 3,
+      subMaxLevel: 2,
+      notFoundPage: true,
+      skipLink: 'Saltar al contenido',
+      search: {
+        paths: 'auto',
+        placeholder: 'Buscar en el wiki',
+        noData: 'Sin resultados',
+        depth: 3,
+        namespace: 'bortlecero-spherex-wiki',
+        resultSource: 'page'
+      },
+      plugins: [
+        // Pie con «editar en GitHub» y la fecha de la foto.
+        function (hook, vm) {
+          hook.beforeEach(function (md) {
+            var url = REPO + '/blob/main/' + vm.route.file;
+            return md +
+              '\n\n<div class="bc-pie">' +
+              '<span>Cada dato lleva su fuente y su fecha. En la entrega se cita la fuente original, no este wiki.</span>' +
+              '<a href="' + url + '" target="_blank" rel="noopener">Editar esta página en GitHub</a>' +
+              '</div>';
+          });
+        }
+      ]
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/plugins/search.min.js"></script>
+</body>
+</html>

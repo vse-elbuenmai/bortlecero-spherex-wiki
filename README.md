@@ -8,6 +8,8 @@ Aquí está lo que hay que saber de la misión, de sus datos, de los cinco objet
 con la fuente de cada dato. Sirve para resolver dudas rápido durante el hackatón sin tener que volver a
 investigar.
 
+**Versión web con buscador:** https://vse-elbuenmai.github.io/bortlecero-spherex-wiki/
+
 > **Este wiki no es la solución.** No tiene código ni decisiones de diseño. La idea de cómo resolver el
 > reto la decide el equipo, y lo que se decide se escribe en el repo del proyecto,
 > [bortlecero-spaceapps](https://github.com/vse-elbuenmai/bortlecero-spaceapps).
@@ -63,8 +65,24 @@ Cualquiera del equipo puede corregir o añadir. Las reglas están en [AGENTS.md]
 rama propia y PR, en español, **cada dato con su fuente y su fecha**, nada de datos personales, y nada
 que decida la solución.
 
+## La versión web
+
+El sitio es un solo [`index.html`](https://github.com/vse-elbuenmai/bortlecero-spherex-wiki/blob/main/index.html)
+que lee estos mismos Markdown en el navegador y los muestra con menú lateral y buscador. No hay paso de
+build: lo que se fusiona a `main` aparece en el sitio en un par de minutos. Se publica con GitHub Pages
+desde la raíz de `main`. Los colores y la fuente siguen el `DESIGN.md` del proyecto.
+
+Software que usa:
+
+| Qué | Licencia | Enlace |
+|---|---|---|
+| Docsify 5.1.0, con su plugin de búsqueda | MIT | https://github.com/docsifyjs/docsify |
+| Space Grotesk, de Florian Karsten (vía Fontsource 5.3.0) | SIL Open Font License 1.1 | https://github.com/floriankarsten/space-grotesk |
+
+Para verlo en local: `python -m http.server 3000` en la carpeta del repo y abrir http://localhost:3000.
+
 ## Licencia
 
-El texto de este wiki está bajo [Apache 2.0](LICENSE), la licencia por defecto de Space Apps. Los datos,
+El texto de este wiki está bajo [Apache 2.0](https://github.com/vse-elbuenmai/bortlecero-spherex-wiki/blob/main/LICENSE), la licencia por defecto de Space Apps. Los datos,
 las cifras y las citas pertenecen a sus fuentes (NASA, IPAC/IRSA, Caltech, ESA, CDS y los autores de cada
 paper), que se nombran en cada página.
