@@ -29,7 +29,12 @@ Vale para cualquier persona o agente (Claude Code, Codex) que edite aquí.
 
 - Rama propia (`<nombre>/<tema>`, `claude/<tema>`, `codex/<tema>`) y PR a `main`. Nadie commitea directo
   a `main`.
-- Una página por tema. Si añades una, enlázala desde el índice del [README.md](README.md).
+- Una página por tema. Si añades una, enlázala desde el índice del [README.md](README.md) **y** desde
+  [`_sidebar.md`](_sidebar.md) (con ruta que empiece en `/`): el buscador de la versión web sólo indexa
+  las páginas que están en el menú lateral.
+- La versión web es [`index.html`](index.html) (Docsify, sin build), publicada con GitHub Pages desde
+  `main`. Los enlaces entre páginas van relativos y a archivos `.md`; a lo que no sea Markdown
+  (`LICENSE`, imágenes externas) se enlaza con la URL completa de GitHub.
 - Cada página empieza con su título, una línea de qué cubre y **cuándo se verificó**, y termina con sus
   fuentes.
 - Lo generado con IA se declara en el commit con el trailer `Co-Authored-By`.
